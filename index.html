@@ -5,39 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador de Memes</title>
+    <script src="https://kit.fontawesome.com/5a448a2b79.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./CSS/style.css">
+
 
 </head>
 <body>
     <!--Inicio de Header-->
     <header>
-        <h1 class="">
+        <h1 class="title">
             Generador de Memes
         </h1>
-        <div class="">
-            <button class="">Imagen</button>
-            <button class="">Texto</button>
-            <button class="">Modo oscuro</button>
+        <div class="buttons-container">
+            <button class="button">
+                <i class="fas fa-file-image button-icon-text" aria-hidden="true"></i>
+                Imagen
+            </button>
+            <button class="button">
+                <i class="fas fa-font button-icon-text" aria-hidden="true"></i>
+                Texto
+            </button>
+            <button class="button"><i class="far fa-lightbulb button-icon-text" aria-hidden="true"></i>
+                Modo oscuro
+            </button>
         </div>
 
     </header>
     <!--Fin de Header-->
     <div>
         <!--Inicio de main-->
-        <main>
-            <div>
-                <p>
+        <main class="container-meme">
+            <div class="meme-box">
+                <p class="text-meme">
                     TOP TEXT
                 </p>
                 <div>
 
                 </div>
-                <p>
+                <p class="text-meme">
                     BOTTOM TEXT
                 </p>
             </div>
 
-            <button>Descargar meme</button>
+            <button class="button-download"><i class="fas fa-download button-icon-text" aria-hidden="true"></i>
+                Descargar meme
+            </button>
         </main>
         <!--Fin de main-->
 
