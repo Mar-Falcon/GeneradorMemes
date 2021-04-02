@@ -59,48 +59,57 @@
             <h2>IMAGEN</h2>
             <div>         
                 <label for="">URL</label>
-                <input type="text">
+                <input type="text" class="panelImput">
             </div>
-            <div>         
+            <div class="column">         
                 <label for="">FONDO</label>
-                <input type="text">
-                <input type="text">
+                <div class="row">
+                    <input type="text" class="panelImput marginRight">
+                    <select name="" id="" class="panelImput">
+                        <option value="">Ninguno</option>
+                        <option value="">Aclarar</option>
+                        <option value="">Oscurecer</option>
+                        <option value="">Diferencia</option>
+                        <option value="">Luminosidad</option>
+                        <option value="">Multiplicar</option>
+                    </select>
+                </div>
             </div>
             <div>
                 <h3>FILTROS</h3>
-                <div>
-                <label for="">BRILLO</label>
-                <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+                <div class="column">
+                    <label for="">BRILLO</label>
+                    <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
                 </div>
-                <div>
+                <div class="column">
                     <label for="brightness-slider">OPACIDAD</label>
                     <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
                 </div>
-                <div>
+                <div class="column">
                     <label for="brightness-slider">CONTRASTE</label>
                     <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
                 </div>
-                <div>
+                <div class="column">
                     <label for="brightness-slider">DESENFOQUE</label>
                     <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
                 </div>
-                <div>
+                <div class="column">
                     <label for="brightness-slider">ESCALA DE GRISES</label>
                     <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
                 </div>
-                <div>
+                <div class="column">
                     <label for="brightness-slider">SEPIA</label>
                     <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
                 </div>
-                <div>
+                <div class="column">
                     <label for="brightness-slider">HUE</label>
                     <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
                 </div>
-                <div>
+                <div class="column">
                     <label for="brightness-slider">SATURADO</label>
                     <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
                 </div>
-                <div>
+                <div class="column">
                     <label for="brightness-slider">NEGATIVO</label>
                     <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
                 </div>
@@ -115,7 +124,7 @@
             <!------------------TEXTO------------------------>
             <div>
                 <h3>SUPERIOR</h3>
-                <textarea aria-label="Texto superior" class=" " id=" ">TOP TEXT</textarea>
+                <textarea aria-label="Texto superior" class="panelImput" id=" ">TOP TEXT</textarea>
                 <div>
                     <input type="checkbox" name="" id="">
                     <label for="">Sin texto superior</label>
@@ -123,7 +132,7 @@
             </div>
             <div>
                 <h3>INFERIOR</h3>
-                <textarea aria-label="Texto inferior" class=" " id=" ">BOTTOM TEXT</textarea>
+                <textarea aria-label="Texto inferior" class="panelImput" id=" ">BOTTOM TEXT</textarea>
                 <div>
                     <input type="checkbox" name="" id="">
                     <label for="">Sin texto inferior</label>
@@ -132,7 +141,7 @@
             <!----------------FUENTE---------------------------->
             <div>
                 <h3>FUENTE</h3>
-                <select name="" id="">
+                <select name="" id="" class="panelImput">
                     <option value="">Arial</option>
                     <option value="">Arial Black</option>
                     <option value="">Comic Sans Ms</option>
@@ -141,14 +150,14 @@
                     <option value="">Verdana</option>
                     <option value="">Times New Roman</option>
                 </select>
-                <div>
+                <div class="row">
                     <!--Tamaño-->
-                    <input type="number">
-                    <div>
+                    <input type="number" class="panelImput">
+                    <div class="row marginRight">
                         <!--Alineación--> 
-                        <button><i class="fas fa-align-left" aria-hidden="true"></i></button>
-                        <button><i class="fas fa-align-center" aria-hidden="true"></i></button>
-                        <button><i class="fas fa-align-right" aria-hidden="true"></i></button>
+                        <button class="panelImput"><i class="fas fa-align-left" aria-hidden="true"></i></button>
+                        <button class="panelImput" ><i class="fas fa-align-center" aria-hidden="true"></i></button>
+                        <button class="panelImput"><i class="fas fa-align-right" aria-hidden="true"></i></button>
                     </div>
                 </div>
             </div>
@@ -157,11 +166,11 @@
                 <div>
                     <div>
                         <h3>COLOR</h3>
-                        <input type="color" name="" id="" value="#000000">
+                        <input type="color" name="" id="" value="#000000" class="panelImput">
                     </div>
                     <div>
                         <h3>FONDO</h3>
-                        <input type="color" name="" id="">
+                        <input type="color" name="" id=""class="panelImput" >
                     </div>
                 </div>
                 <div>
@@ -173,20 +182,20 @@
             <div>
                 <h3>CONTORNO</h3>
                 <div>
-                    <button>NINGUNO</button>
-                    <button>CLARO</button>
-                    <button>OSCURO</button>
+                    <button class="panelImput" >NINGUNO</button>
+                    <button class="panelImput">CLARO</button>
+                    <button class="panelImput">OSCURO</button>
                 </div>                
             </div>
             <!------------ESPACIADO-------------->
             <div>
                 <h3>ESPACIADO</h3>
-                <input type="number">
+                <input type="number" class="panelImput">
             </div>
             <!--INTERLINEADO---------------------->
             <div>
                 <h3>INTERLINEADO</h3>
-                <select name="" id="">
+                <select name="" id="" class="panelImput">
                     <option value="">0.8</option>
                     <option value="">1</option>
                     <option value="">1.2</option>
