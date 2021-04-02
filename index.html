@@ -17,11 +17,11 @@
             Generador de Memes
         </h1>
         <div class="buttons-container">
-            <button class="button">
+            <button class="button"id="button-img">
                 <i class="fas fa-file-image button-icon-text" aria-hidden="true"></i>
                 Imagen
             </button>
-            <button class="button">
+            <button class="button" id="button-text">
                 <i class="fas fa-font button-icon-text" aria-hidden="true"></i>
                 Texto
             </button>
@@ -51,18 +51,152 @@
     </main>
         <!--Fin de main-->
         <!-- Inicio de aside-->
-    <aside>
-        <section>
-            <h3>Imagen</h3>
-            <input type="text">
+    <aside class="panel" id="panel">
+        <button class="panel-close" id="close"><i class="fas fa-times"></i>
+        </button>
+        <!--Inicio Section Imagen-->
+        <section id="panelImg">
+            <h2>IMAGEN</h2>
+            <div>         
+                <label for="">URL</label>
+                <input type="text">
+            </div>
+            <div>         
+                <label for="">FONDO</label>
+                <input type="text">
+                <input type="text">
+            </div>
+            <div>
+                <h3>FILTROS</h3>
+                <div>
+                <label for="">BRILLO</label>
+                <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+                </div>
+                <div>
+                    <label for="brightness-slider">OPACIDAD</label>
+                    <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+                </div>
+                <div>
+                    <label for="brightness-slider">CONTRASTE</label>
+                    <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+                </div>
+                <div>
+                    <label for="brightness-slider">DESENFOQUE</label>
+                    <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+                </div>
+                <div>
+                    <label for="brightness-slider">ESCALA DE GRISES</label>
+                    <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+                </div>
+                <div>
+                    <label for="brightness-slider">SEPIA</label>
+                    <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+                </div>
+                <div>
+                    <label for="brightness-slider">HUE</label>
+                    <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+                </div>
+                <div>
+                    <label for="brightness-slider">SATURADO</label>
+                    <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+                </div>
+                <div>
+                    <label for="brightness-slider">NEGATIVO</label>
+                    <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+                </div>
+            </div>
+            <button class="button button-default" id="default-filters-button">Reestablecer filtros</button>
         </section>
-        <section>
-            <h3>Texto</h3>
-            <input type="text">
+        <!--Fin Section Imagen-->
+
+        <!--Inicio Section Texto-->
+        <section id="panelText">
+            <h2>TEXTO</h2>
+            <!------------------TEXTO------------------------>
+            <div>
+                <h3>SUPERIOR</h3>
+                <textarea aria-label="Texto superior" class=" " id=" ">TOP TEXT</textarea>
+                <div>
+                    <input type="checkbox" name="" id="">
+                    <label for="">Sin texto superior</label>
+                </div>
+            </div>
+            <div>
+                <h3>INFERIOR</h3>
+                <textarea aria-label="Texto inferior" class=" " id=" ">BOTTOM TEXT</textarea>
+                <div>
+                    <input type="checkbox" name="" id="">
+                    <label for="">Sin texto inferior</label>
+                </div>
+            </div>
+            <!----------------FUENTE---------------------------->
+            <div>
+                <h3>FUENTE</h3>
+                <select name="" id="">
+                    <option value="">Arial</option>
+                    <option value="">Arial Black</option>
+                    <option value="">Comic Sans Ms</option>
+                    <option value="">Helvetica</option>
+                    <option value="">Impact</option>
+                    <option value="">Verdana</option>
+                    <option value="">Times New Roman</option>
+                </select>
+                <div>
+                    <!--Tamaño-->
+                    <input type="number">
+                    <div>
+                        <!--Alineación--> 
+                        <button><i class="fas fa-align-left" aria-hidden="true"></i></button>
+                        <button><i class="fas fa-align-center" aria-hidden="true"></i></button>
+                        <button><i class="fas fa-align-right" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-------------COLOR-------------->
+            <div>
+                <div>
+                    <div>
+                        <h3>COLOR</h3>
+                        <input type="color" name="" id="" value="#000000">
+                    </div>
+                    <div>
+                        <h3>FONDO</h3>
+                        <input type="color" name="" id="">
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="">
+                    <label for="">Fondo transparente</label>
+                </div>
+            </div>
+            <!------------CONTORNO--------------->
+            <div>
+                <h3>CONTORNO</h3>
+                <div>
+                    <button>NINGUNO</button>
+                    <button>CLARO</button>
+                    <button>OSCURO</button>
+                </div>                
+            </div>
+            <!------------ESPACIADO-------------->
+            <div>
+                <h3>ESPACIADO</h3>
+                <input type="number">
+            </div>
+            <!--INTERLINEADO---------------------->
+            <div>
+                <h3>INTERLINEADO</h3>
+                <select name="" id="">
+                    <option value="">0.8</option>
+                    <option value="">1</option>
+                    <option value="">1.2</option>
+                    <option value="">1.5</option>
+                    <option value="">2</option>
+                    <option value="">2.5</option>
+                </select>
+            </div>
         </section>
-
-
-
+        <!--Fin Section Imagen-->
     </aside>            
 
     <script src="./JS/app.js"></script>
