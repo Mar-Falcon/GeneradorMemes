@@ -3,8 +3,8 @@ const panelImg = document.querySelector("#panelImg");
 const panelText = document.querySelector("#panelText");
 
 const buttonClose = document.querySelector("#close");
-const buttonImg = document.querySelector("#button-img");
-const buttonText = document.querySelector("#button-text");
+const buttonImg = document.querySelector("#buttonImg");
+const buttonText = document.querySelector("#buttonText");
 
 
 //cuando hago click en boton de cerra se cierra el panel(aside completo)

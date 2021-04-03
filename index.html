@@ -16,16 +16,16 @@
         <h1 class="title">
             Generador de Memes
         </h1>
-        <div class="buttons-container">
-            <button class="button"id="button-img">
-                <i class="fas fa-file-image button-icon-text" aria-hidden="true"></i>
+        <div class="buttonContainer">
+            <button class="button"id="buttonImg">
+                <i class="fas fa-file-image buttonIconText" aria-hidden="true"></i>
                 Imagen
             </button>
-            <button class="button" id="button-text">
-                <i class="fas fa-font button-icon-text" aria-hidden="true"></i>
+            <button class="button" id="buttonText">
+                <i class="fas fa-font buttonIconText" aria-hidden="true"></i>
                 Texto
             </button>
-            <button class="button"><i class="far fa-lightbulb button-icon-text" aria-hidden="true"></i>
+            <button class="button"><i class="far fa-lightbulb buttonIconText" aria-hidden="true"></i>
                 Modo oscuro
             </button>
         </div>
@@ -33,36 +33,36 @@
     </header>
     <!--Fin de Header-->
     <!--Inicio de main-->
-    <main class="container-meme">
-        <div class="meme-box">
-            <p class="text-meme">
+    <main class="containerMeme">
+        <div class="memeBox">
+            <p class="textMeme">
                     TOP TEXT
             </p>
-            <img src="" alt="" class="meme-img">
+            <img src="" alt="" class="memeImg">
 
-            <p class="text-meme">
+            <p class="textMeme">
                     BOTTOM TEXT
             </p>
         </div>
 
-        <button class="button-download"><i class="fas fa-download button-icon-text" aria-hidden="true"></i>
+        <button class="buttonDownload"><i class="fas fa-download buttonIconText" aria-hidden="true"></i>
                 Descargar meme
         </button>
     </main>
         <!--Fin de main-->
         <!-- Inicio de aside-->
-    <aside class="panel" id="panel">
-        <button class="panel-close" id="close"><i class="fas fa-times"></i>
+    <aside class="panel ocultar" id="panel">
+        <button class="panelClose" id="close"><i class="fas fa-times"></i>
         </button>
         <!--Inicio Section Imagen-->
         <section id="panelImg">
             <h2>IMAGEN</h2>
             <div>         
-                <label for="">URL</label>
+                <label for=""> <h3>URL</h3></label>
                 <input type="text" class="panelImput">
             </div>
             <div class="column">         
-                <label for="">FONDO</label>
+                <label for=""><h3>FONDO</h3></label>
                 <div class="row">
                     <input type="text" class="panelImput marginRight">
                     <select name="" id="" class="panelImput">
@@ -75,49 +75,48 @@
                     </select>
                 </div>
             </div>
-            <div>
+            <div class="">
                 <h3>FILTROS</h3>
-                <div class="column">
+                <div class="column inputRange">
                     <label for="">BRILLO</label>
-                    <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+                    <input type="range" id="brightness-slider" class="" min="0" max="1" value="1" step="0.1">
                 </div>
-                <div class="column">
+                <div class="column inputRange">
                     <label for="brightness-slider">OPACIDAD</label>
                     <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
                 </div>
-                <div class="column">
+                <div class="column inputRange">
                     <label for="brightness-slider">CONTRASTE</label>
                     <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
                 </div>
-                <div class="column">
+                <div class="column inputRange">
                     <label for="brightness-slider">DESENFOQUE</label>
                     <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
                 </div>
-                <div class="column">
+                <div class="column inputRange">
                     <label for="brightness-slider">ESCALA DE GRISES</label>
                     <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
                 </div>
-                <div class="column">
+                <div class="column inputRange">
                     <label for="brightness-slider">SEPIA</label>
                     <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
                 </div>
-                <div class="column">
+                <div class="column inputRange">
                     <label for="brightness-slider">HUE</label>
                     <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
                 </div>
-                <div class="column">
+                <div class="column inputRange">
                     <label for="brightness-slider">SATURADO</label>
                     <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
                 </div>
-                <div class="column">
+                <div class="column inputRange">
                     <label for="brightness-slider">NEGATIVO</label>
                     <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
                 </div>
             </div>
-            <button class="button button-default" id="default-filters-button">Reestablecer filtros</button>
+            <button class="button buttonDefault" id="default-filters-button">Reestablecer filtros</button>
         </section>
         <!--Fin Section Imagen-->
-
         <!--Inicio Section Texto-->
         <section id="panelText">
             <h2>TEXTO</h2>
@@ -152,25 +151,25 @@
                 </select>
                 <div class="row">
                     <!--Tamaño-->
-                    <input type="number" class="panelImput">
-                    <div class="row marginRight">
+                    <input type="number" class="panelImput marginRight">
+                    <div class="row">
                         <!--Alineación--> 
-                        <button class="panelImput"><i class="fas fa-align-left" aria-hidden="true"></i></button>
-                        <button class="panelImput" ><i class="fas fa-align-center" aria-hidden="true"></i></button>
+                        <button class="panelImput marginRight"><i class="fas fa-align-left" aria-hidden="true"></i></button>
+                        <button class="panelImput marginRight" ><i class="fas fa-align-center" aria-hidden="true"></i></button>
                         <button class="panelImput"><i class="fas fa-align-right" aria-hidden="true"></i></button>
                     </div>
                 </div>
             </div>
             <!-------------COLOR-------------->
             <div>
-                <div>
-                    <div>
+                <div class="row">
+                    <div class="marginRight">
                         <h3>COLOR</h3>
                         <input type="color" name="" id="" value="#000000" class="panelImput">
                     </div>
                     <div>
                         <h3>FONDO</h3>
-                        <input type="color" name="" id=""class="panelImput" >
+                        <input type="color" name="" id=""class="panelImput">
                     </div>
                 </div>
                 <div>
@@ -181,9 +180,9 @@
             <!------------CONTORNO--------------->
             <div>
                 <h3>CONTORNO</h3>
-                <div>
-                    <button class="panelImput" >NINGUNO</button>
-                    <button class="panelImput">CLARO</button>
+                <div class="row">
+                    <button class="panelImput marginRight" >NINGUNO</button>
+                    <button class="panelImput marginRight">CLARO</button>
                     <button class="panelImput">OSCURO</button>
                 </div>                
             </div>
