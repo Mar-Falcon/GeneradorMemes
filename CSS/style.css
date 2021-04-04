@@ -10,9 +10,10 @@ body{
 }
 header{
     background-color:  rgb(217, 217, 217);
+    color: rgb(49, 47, 47);
 }
 .title{
-    color: rgb(49, 47, 47);
+    /*color: rgb(49, 47, 47);*/
     text-align: center;
     padding-top: 10px;
 }
@@ -34,7 +35,7 @@ header{
     cursor: pointer;
     margin: 2px;
     background-color: transparent;
-    color:rgb(49, 47, 47);
+    /*color:rgb(49, 47, 47);*/
 }
 .button:hover{
     background-color:rgb(192, 192, 192);
@@ -46,7 +47,8 @@ header{
     margin-right: 5px;
     display: block;
 }
-main.containerMeme {
+/*main*/
+.containerMeme {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -154,11 +156,23 @@ h3{
     margin-top: 20px;
 }
 input[type=range]{  
-    margin-top: 5px;    
+    margin-top: 5px;   
 }
+/*ver color del InputRange:-webkit-appearance: none; */
 .buttonDefault{
     margin-top: 30px;
     background-color: rgb(217, 217, 217);
+}
+.dark{
+    background-color: black ;
+    color: white;
+}
+.darkMain{
+    background: rgb(34, 32, 32);
+}
+.darkPanel{
+    background:rgb(56, 53, 53);
+    color: white ;
 }
 @media screen and (min-width: 1000px){
     .panel{

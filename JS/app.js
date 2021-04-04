@@ -27,3 +27,29 @@ buttonImg.addEventListener("click",()=>{
     panelText.classList.add("ocultar");
     panelImg.classList.remove("ocultar");
 })
+
+//Modo Oscuro:
+const header = document.getElementById("header");
+const buttonMode = document.getElementById("mode");
+const main = document.getElementById("main");
+let modo = "claro";
+
+buttonMode.addEventListener('click', () => {
+  header.classList.toggle("dark");
+  buttonImg.classList.toggle("dark");
+  buttonText.classList.toggle("dark");
+  buttonMode.classList.toggle("dark");
+  main.classList.toggle("darkMain");
+  panel.classList.toggle("darkPanel");
+  document.body.classList.toggle("darkMain");
+  //buttonMode.innerHTML=`<i class="far fa-lightbulb buttonIconText" aria-hidden="true"></i> Modo Claro`;
+  if(modo != "claro") 
+  {
+   modo = "claro";  
+   buttonMode.innerHTML=`<i class="far fa-lightbulb buttonIconText" aria-hidden="true"></i> Modo claro`; 
+  }
+  else{
+      modo = "oscuro";
+      buttonMode.innerHTML=`<i class="far fa-lightbulb buttonIconText" aria-hidden="true"></i> Modo oscuro`;
+      };  
+});
