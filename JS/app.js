@@ -6,8 +6,7 @@ const buttonClose = document.querySelector("#close");
 const buttonImg = document.querySelector("#buttonImg");
 const buttonText = document.querySelector("#buttonText");
 
-
-//cuando hago click en boton de cerra se cierra el panel(aside completo)
+//cuando hago click en boton de cerrar se cierra el panel (aside completo)
 //agregar la clase ocular
       
 buttonClose.addEventListener("click",()=>{
@@ -39,10 +38,10 @@ buttonMode.addEventListener('click', () => {
   buttonImg.classList.toggle("dark");
   buttonText.classList.toggle("dark");
   buttonMode.classList.toggle("dark");
-  main.classList.toggle("darkMain");
-  panel.classList.toggle("darkPanel");
   document.body.classList.toggle("darkMain");
-  //buttonMode.innerHTML=`<i class="far fa-lightbulb buttonIconText" aria-hidden="true"></i> Modo Claro`;
+  main.classList.toggle("darkMain");
+  panel.classList.toggle("darkPanel");  
+  buttonClose.classList.toggle("white");
   if(modo != "claro") 
   {
    modo = "claro";  
