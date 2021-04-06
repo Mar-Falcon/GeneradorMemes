@@ -32,11 +32,11 @@
     <!-------------Inicio de main------------->
     <main id="main" class="containerMeme">
         <div class="memeBox">
-            <p class="textMeme">
+            <p id="topText" class="textMeme">
                     TOP TEXT
             </p>
-            <img src="" alt="" class="memeImg">
-            <p class="textMeme">
+            <img src="" alt="" id="img" class="memeImg">
+            <p id="bottomText" class="textMeme">
                     BOTTOM TEXT
             </p>
         </div>
@@ -53,8 +53,8 @@
         <section id="panelImg">
             <h2>IMAGEN</h2>
             <div>         
-                <label for=""> <h3>URL</h3></label>
-                <input type="text" class="panelImput">
+                <label for=""><h3>URL</h3></label>
+                <input type="text" id="url" class="panelImput">
             </div>
             <div class="column">         
                 <label for=""><h3>FONDO</h3></label>
@@ -118,7 +118,7 @@
             <!------------------TEXTO------------------------>
             <div>
                 <h3>SUPERIOR</h3>
-                <textarea aria-label="Texto superior" class="panelImput" id=" ">TOP TEXT</textarea>
+                <textarea aria-label="Texto superior" class="panelImput" id="inputTopText">TOP TEXT</textarea>
                 <div>
                     <input type="checkbox" name="" id="">
                     <label for="">Sin texto superior</label>
@@ -126,7 +126,7 @@
             </div>
             <div>
                 <h3>INFERIOR</h3>
-                <textarea aria-label="Texto inferior" class="panelImput" id=" ">BOTTOM TEXT</textarea>
+                <textarea aria-label="Texto inferior" class="panelImput" id="inputBottomText">BOTTOM TEXT</textarea>
                 <div>
                     <input type="checkbox" name="" id="">
                     <label for="">Sin texto inferior</label>

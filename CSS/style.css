@@ -71,6 +71,9 @@ header{
     font-weight: 800;
     padding: 15px;    
 }
+.memeImg{
+    background-image: url();
+}
 .buttonDownload{
     height: 36px;
     display: flex;

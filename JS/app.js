@@ -25,7 +25,31 @@ buttonImg.addEventListener("click",()=>{
     panel.classList.remove("ocultar");
     panelText.classList.add("ocultar");
     panelImg.classList.remove("ocultar");
-})
+});
+
+//Eventos Panel Imagen:
+
+const inputImg = document.querySelector("#url");
+const img = document.querySelector("#img");
+
+inputImg.addEventListener("input", () => {
+    img.src = inputImg.value;
+});
+
+//Panel texto:
+const topText = document.getElementById("topText");
+const inputTopText = document.getElementById("inputTopText");
+
+inputTopText.addEventListener("input", () => {
+    topText.textContent = inputTopText.value;
+});
+
+const bottomText = document.getElementById("bottomText");
+const inputBottomText = document.getElementById("inputBottomText");
+
+inputBottomText.addEventListener("input",()=>{
+    bottomText.textContent = inputBottomText.value;
+});
 
 //Modo Oscuro:
 const header = document.getElementById("header");
@@ -52,3 +76,4 @@ buttonMode.addEventListener('click', () => {
       buttonMode.innerHTML=`<i class="far fa-lightbulb buttonIconText" aria-hidden="true"></i> Modo oscuro`;
       };  
 });
+
