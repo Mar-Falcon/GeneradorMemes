@@ -35,6 +35,12 @@ const img = document.querySelector("#img");
 inputImg.addEventListener("input", () => {
     img.src = inputImg.value;
 });
+/*
+para poner color de fondo en espacio de imagen
+const fondo = document.getElementById("color");
+fondo.addEventListener("input", () => {
+    img.style.backgroundColor = fondo.value;
+}); Ver esto que no funciona*/
 
 //Panel texto:
 const topText = document.getElementById("topText");
@@ -50,6 +56,30 @@ const inputBottomText = document.getElementById("inputBottomText");
 inputBottomText.addEventListener("input",()=>{
     bottomText.textContent = inputBottomText.value;
 });
+
+const fondoLetra = document.getElementById("fondoLetra");
+
+fondoLetra.addEventListener("input", () => {
+   topText.style.backgroundColor = fondoLetra.value;
+   bottomText.style.backgroundColor = fondoLetra.value;
+});
+
+const colorLetra = document.getElementById("colorLetra");
+
+colorLetra.addEventListener("input", () => {
+   topText.style.color = colorLetra.value;
+   bottomText.style.color = colorLetra.value;
+});
+
+/*
+//Para quitar texto superior. ver no funciona.
+let divText = document.getElementById("divText");
+let parrafo = divText.children.item(0); // selecciono el párrafo
+let sinTopText = document.getElementById("stp");
+
+sinTopText.addEventListener("checkbox",()=>{
+    divText.removeChild(parrafo) = sinTopText.value; 
+});*/
 
 //Modo Oscuro:
 const header = document.getElementById("header");

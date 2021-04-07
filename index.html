@@ -31,7 +31,7 @@
     <!-----------Fin de Header-------------->
     <!-------------Inicio de main------------->
     <main id="main" class="containerMeme">
-        <div class="memeBox">
+        <div id="divText" class="memeBox">
             <p id="topText" class="textMeme">
                     TOP TEXT
             </p>
@@ -59,7 +59,7 @@
             <div class="column">         
                 <label for=""><h3>FONDO</h3></label>
                 <div class="row">
-                    <input type="text" class="panelImput marginRight">
+                    <input type="color" id="color" value="#000000"  class="panelImput marginRight">
                     <select name="" id="" class="panelImput">
                         <option value="">Ninguno</option>
                         <option value="">Aclarar</option>
@@ -120,7 +120,7 @@
                 <h3>SUPERIOR</h3>
                 <textarea aria-label="Texto superior" class="panelImput" id="inputTopText">TOP TEXT</textarea>
                 <div>
-                    <input type="checkbox" name="" id="">
+                    <input type="checkbox" name="" id="stp">
                     <label for="">Sin texto superior</label>
                 </div>
             </div>
@@ -160,11 +160,11 @@
                 <div class="row">
                     <div class="marginRight">
                         <h3>COLOR</h3>
-                        <input type="color" name="" id="" value="#000000" class="panelImput">
+                        <input type="color" name="" id="colorLetra" value="#000000" class="panelImput">
                     </div>
                     <div>
                         <h3>FONDO</h3>
-                        <input type="color" name="" id=""class="panelImput">
+                        <input type="color" name="" id="fondoLetra"class="panelImput">
                     </div>
                 </div>
                 <div>
