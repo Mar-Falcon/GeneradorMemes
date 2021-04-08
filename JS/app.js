@@ -32,29 +32,50 @@ buttonImg.addEventListener("click",()=>{
 const inputImg = document.querySelector("#url");
 const img = document.querySelector("#img");
 
+//esto es para cargar imagen
 inputImg.addEventListener("input", () => {
     img.src = inputImg.value;
 });
-/*
-para poner color de fondo en espacio de imagen
+
+let topText = document.getElementById("topText");
+let bottomText = document.getElementById("bottomText");
+let divText = document.getElementById("divText");
 const fondo = document.getElementById("color");
+
+//color de fonde de imagen
 fondo.addEventListener("input", () => {
-    img.style.backgroundColor = fondo.value;
-}); Ver esto que no funciona*/
+    divText.style.backgroundColor = fondo.value;
+}); 
 
 //Panel texto:
-const topText = document.getElementById("topText");
-const inputTopText = document.getElementById("inputTopText");
+
+let inputTopText = document.getElementById("inputTopText");
+topText.textContent = "TOP TEXT";
+inputTopText.textContent = "TOP TEXT";
 
 inputTopText.addEventListener("input", () => {
     topText.textContent = inputTopText.value;
 });
+//Para quitar texto superior:
+let sinTopText = document.getElementById("sinTopText");
+sinTopText.addEventListener("input",()=>{    
+        topText.textContent ="";  
+        //inputTopText.textContent ="";    
+        topText.classList.toggle("textMeme") = sinTopText.value;  
+}); 
+//ANALIZAR TEMA INPUT que no ingrese cuando indico sin texto superior.
 
-const bottomText = document.getElementById("bottomText");
 const inputBottomText = document.getElementById("inputBottomText");
+bottomText.textContent = "BOTTOM TEXT";
+let sinBottomText = document.getElementById("sinBottomText");
 
 inputBottomText.addEventListener("input",()=>{
     bottomText.textContent = inputBottomText.value;
+});
+
+sinBottomText.addEventListener("input",()=>{
+    bottomText.textContent ="";
+    bottomText.classList.toggle("textMeme") = sinBottomText.value;     
 });
 
 const fondoLetra = document.getElementById("fondoLetra");
@@ -70,16 +91,6 @@ colorLetra.addEventListener("input", () => {
    topText.style.color = colorLetra.value;
    bottomText.style.color = colorLetra.value;
 });
-
-/*
-//Para quitar texto superior. ver no funciona.
-let divText = document.getElementById("divText");
-let parrafo = divText.children.item(0); // selecciono el párrafo
-let sinTopText = document.getElementById("stp");
-
-sinTopText.addEventListener("checkbox",()=>{
-    divText.removeChild(parrafo) = sinTopText.value; 
-});*/
 
 //Modo Oscuro:
 const header = document.getElementById("header");
