@@ -70,7 +70,10 @@ header{
     font-size: 40px;
     font-weight: 800;
     padding: 15px;    
+
 }
+
+
 /*
 .memeImg{
     background-image: url();
@@ -196,6 +199,22 @@ input[type=range]::-webkit-slider-thumb {
 .white{
     color: white;
 }
+/*
+input[type='color']::-webkit-color-swatch {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border-radius: 25px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    margin-right: 10px;
+}*/
+.centrado{
+    padding: 5px;
+}
+  
 /*--- Ajustes responsivos---*/
 @media screen and (min-width: 768px){
     .panel{
@@ -205,5 +224,6 @@ input[type=range]::-webkit-slider-thumb {
     }   
     .panelClose{
         display: none;
-    }     
+    }   
+    /*Ver que aparezca panel desde el pirncipio con ocultar una seccion y panel block total*/  
 }
