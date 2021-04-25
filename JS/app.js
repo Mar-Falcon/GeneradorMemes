@@ -55,8 +55,9 @@ let blur = document.getElementById("blur");
 let grayscale = document.getElementById("grays");
 let sepia = document.getElementById("sepia");
 let hue = document.getElementById("hue");
-let saturated = document.getElementById("saturated");
+let saturation = document.getElementById("saturation");
 let negative = document.getElementById("negative");
+
 const actualizarFiltros = ()=>{ 
     img.style.filter = `brightness(${brightness.value}) 
     opacity(${opacity.value}) 
@@ -64,28 +65,43 @@ const actualizarFiltros = ()=>{
     blur(${blur.value}px) 
     grayscale(${grayscale.value}%) 
     sepia(${sepia.value}%) 
-    hue(${hue.value}deg) 
-    saturated(${saturated.value}%) 
-    negative(${negative.value})`;
+    `;
 }
-console.log(actualizarFiltros);
+//DEBRIA AGREGRAR A LA FUNCION ESTO CUANDO LOGRE FUNCIONAR CADA UNO:
+//hue(${hue.value}deg) 
+//saturation(${saturation.value}%) 
+//Negative(${negative.value})
 
+/*ESTOS SON LOS EVENTOS INDIVIDUALES SIN FUNCION:
 brightness.addEventListener("change", () => {
-    img.style.filter = `brightness(${brightness.value}) opacity(${opacity.value}) contrast(${contrast.value}%) blur(${blur.value}px) grayscale(${grayscale.value}%) `;
+    img.style.filter = `brightness(${brightness.value}) opacity(${opacity.value}) contrast(${contrast.value}%) blur(${blur.value}px) grayscale(${grayscale.value}%) sepia(${sepia.value}%)   `;
 });
 opacity.addEventListener("change", () => {
-    img.style.filter = `brightness(${brightness.value}) opacity(${opacity.value}) contrast(${contrast.value}%) blur(${blur.value}px) grayscale(${grayscale.value}%) `;
+    img.style.filter = `brightness(${brightness.value}) opacity(${opacity.value}) contrast(${contrast.value}%) blur(${blur.value}px) grayscale(${grayscale.value}%) sepia(${sepia.value}%)   `;
 });
 contrast.addEventListener("change", () => {
-    img.style.filter = `brightness(${brightness.value}) opacity(${opacity.value}) contrast(${contrast.value}%) blur(${blur.value}px) grayscale(${grayscale.value}%)`;
+    img.style.filter = `brightness(${brightness.value}) opacity(${opacity.value}) contrast(${contrast.value}%) blur(${blur.value}px) grayscale(${grayscale.value}%) sepia(${sepia.value}%)   `;
 });
 blur.addEventListener("change", () => {
-    img.style.filter = `brightness(${brightness.value}) opacity(${opacity.value}) contrast(${contrast.value}%) blur(${blur.value}px) grayscale(${grayscale.value}%)`;
+    img.style.filter = `brightness(${brightness.value}) opacity(${opacity.value}) contrast(${contrast.value}%) blur(${blur.value}px) grayscale(${grayscale.value}%) sepia(${sepia.value}%)  `;
 });
 grayscale.addEventListener("change", () => {
-    img.style.filter = `brightness(${brightness.value}) opacity(${opacity.value}) contrast(${contrast.value}%) blur(${blur.value}px) grayscale(${grayscale.value}%)`;
+    img.style.filter = `brightness(${brightness.value}) opacity(${opacity.value}) contrast(${contrast.value}%) blur(${blur.value}px) grayscale(${grayscale.value}%) sepia(${sepia.value}%)   `;
 });
-/*
+sepia.addEventListener("change", () => {
+    img.style.filter = `brightness(${brightness.value}) opacity(${opacity.value}) contrast(${contrast.value}%) blur(${blur.value}px) grayscale(${grayscale.value}%) sepia(${sepia.value}%)    `;
+});
+
+/*NO FUNCIONA HUE, SATURATION Y NEGATIVE
+negative.addEventListener("change", () => {
+    img.style.filter = `brightness(${brightness.value}) opacity(${opacity.value}) contrast(${contrast.value}%) blur(${blur.value}px) grayscale(${grayscale.value}%) sepia(${sepia.value}%)    negative(${negative.value})`;
+});
+saturation.addEventListener("change", () => {
+    img.style.filter = `brightness(${brightness.value}) opacity(${opacity.value}) contrast(${contrast.value}%) blur(${blur.value}px) grayscale(${grayscale.value}%) sepia(${sepia.value}%)    saturation(${saturation.value}%)`;
+});
+hue.addEventListener("change", () => {
+    img.style.filter = `brightness(${brightness.value}) opacity(${opacity.value}) contrast(${contrast.value}%) blur(${blur.value}px) grayscale(${grayscale.value}%) sepia(${sepia.value}%)    hue(${hue.value}deg)`;
+});*/
 
 brightness.addEventListener("change", actualizarFiltros);
 opacity.addEventListener("change", actualizarFiltros);
@@ -93,14 +109,22 @@ contrast.addEventListener("change", actualizarFiltros);
 blur.addEventListener("change", actualizarFiltros);
 grayscale.addEventListener("change", actualizarFiltros);
 sepia.addEventListener("change", actualizarFiltros);
-hue.addEventListener("change", actualizarFiltros);
-saturated.addEventListener("change", actualizarFiltros);
-negative.addEventListener ("change", actualizarFiltros);
+//hue.addEventListener("change", actualizarFiltros);
+//saturated.addEventListener("change", actualizarFiltros);
+//negative.addEventListener ("change", actualizarFiltros);
+
 //Resetear filtros:
 /*para resetear los filtros evento click en el boton de resetear y vuelvan a su valor original los range y reutilicen la funcion actualizar filtros para que actualice con esos valores... seria se "borran"
 brightness.value = "1"; opacity.value = "1"; contrast.value = "1000"; blur_.value = "0"; grayscale.value = "0"; sepia.value = "0"; hue.value = "0"; saturation.value = "100"; negative.value = "0"; actualizarFiltros();
 Eso dentro del evento
- */
+*/
+
+let resetFiltros = document.getElementById("resetFiltros");
+
+resetFiltros.addEventListener("click",()=>{
+    img.style.filter = brightness.value = "1"; opacity.value = "1"; contrast.value = "100"; blur.value = "0"; grayscale.value = "0"; sepia.value = "0"; actualizarFiltros();
+});
+
 
 
 //-----------PANEL TEXTO-----------

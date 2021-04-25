@@ -56,10 +56,10 @@
             <div class="column">         
                 <label for=""><h3>FONDO</h3></label>
                 <div class="row"> 
-                    <div class= "panelImput marginRight centrado">                  
-                    <input type="color" id="color" value="#000000"  class="" aria-label="Color de fondo de imagen">                    
-                    <span id="blend-mode-color" class="" aria-hidden="true">#FFFFFF</span> 
-                    </div>
+                                     
+                    <input type="color" id="color" value="#000000"  class="panelImput marginRight" aria-label="Color de fondo de imagen">                    
+                    <!--Puede agregar un div para embolver el input y agregar el span<span id="blend-mode-color" class="" aria-hidden="true">#FFFFFF</span> -->
+                    
                     <select name="" id="" class="panelImput">
                         <option value="">Ninguno</option>
                         <option value="">Aclarar</option>
@@ -102,14 +102,14 @@
                 </div>
                 <div class="column inputRange">
                     <label for="">SATURADO</label>
-                    <input type="range" id="saturated" min="100" max="1000" value="100" step="10">
+                    <input type="range" id="saturation" min="100" max="1000" value="100" step="10">
                 </div>
                 <div class="column inputRange">
                     <label for="">NEGATIVO</label>
                     <input type="range" id="negative" min="0" max="1" value="0" step="0.1">
                 </div>
             </div>
-            <button class="button buttonDefault" id="default-filters-button">Reestablecer filtros</button>
+            <button class="button buttonDefault" id="resetFiltros">Reestablecer filtros</button>
         </section>
         <!------------Fin Section Imagen-------------->
         <!------------Inicio Section Texto------------->
