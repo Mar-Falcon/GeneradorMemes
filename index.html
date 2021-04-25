@@ -31,7 +31,7 @@
     <!-----------Fin de Header-------------->
     <!-------------Inicio de main------------->
     <main id="main" class="containerMeme">
-        <div id="divText" class="memeBox">
+        <div id="divMeme" class="memeBox">
             <p id="topText" class="textMeme"></p>
             <img src="" alt="" id="img" class="memeImg">
             <p id="bottomText" class="textMeme">     
@@ -60,13 +60,13 @@
                     <input type="color" id="color" value="#000000"  class="panelImput marginRight" aria-label="Color de fondo de imagen">                    
                     <!--Puede agregar un div para embolver el input y agregar el span<span id="blend-mode-color" class="" aria-hidden="true">#FFFFFF</span> -->
                     
-                    <select name="" id="" class="panelImput">
-                        <option value="">Ninguno</option>
-                        <option value="">Aclarar</option>
-                        <option value="">Oscurecer</option>
-                        <option value="">Diferencia</option>
-                        <option value="">Luminosidad</option>
-                        <option value="">Multiplicar</option>
+                    <select name="" id="selectBlendMode" class="panelImput">
+                        <option value="unset">Ninguno</option>
+                        <option value="lighten">Aclarar</option>
+                        <option value="darken">Oscurecer</option>
+                        <option value="difference">Diferencia</option>
+                        <option value="luminosity">Luminosidad</option>
+                        <option value="multiply">Multiplicar</option>
                     </select>
                 </div>
             </div>
@@ -146,12 +146,12 @@
                 </select>
                 <div class="row">
                     <!--------Tamaño----------->
-                    <input type="number" class="panelImput marginRight">
+                    <input type="number" class="panelImput marginRight" id="inputFontSize" min="12" value="40">
                     <div class="row">
                         <!-----------Alineación-------------> 
-                        <button class="panelImput marginRight"><i class="fas fa-align-left" aria-hidden="true"></i></button>
-                        <button class="panelImput marginRight" ><i class="fas fa-align-center" aria-hidden="true"></i></button>
-                        <button class="panelImput"><i class="fas fa-align-right" aria-hidden="true"></i></button>
+                        <button class="panelImput marginRight" id="alignLeft"><i class="fas fa-align-left" aria-hidden="true"></i></button>
+                        <button class="panelImput marginRight" id="alignCenter" ><i class="fas fa-align-center" aria-hidden="true"></i></button>
+                        <button class="panelImput" id="alignRight"><i class="fas fa-align-right" aria-hidden="true"></i></button>
                     </div>
                 </div>
             </div>

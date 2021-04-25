@@ -39,13 +39,24 @@ inputImg.addEventListener("input", () => {
 
 let topText = document.getElementById("topText");
 let bottomText = document.getElementById("bottomText");
-let divText = document.getElementById("divText");
+let divMeme = document.getElementById("divMeme");
 const fondo = document.getElementById("color");
 
 //color de fondo de imagen:
 fondo.addEventListener("input", () => {
-    divText.style.backgroundColor = fondo.value;
+    divMeme.style.backgroundColor = fondo.value;
 });
+
+//Efectos de imagen:
+let selectBlendMode = document.getElementById("selectBlendMode");
+
+//NO FUNCIONA
+selectBlendMode.addEventListener("change", () => {
+    
+    img.style.backgroundBlendMode = selectBlendMode.value;
+    
+    }
+);
 
 //Filtros:
 let brightness = document.getElementById("brightness");
@@ -151,9 +162,8 @@ inputBottomText.addEventListener("input",()=>{
     bottomText.textContent = inputBottomText.value;
 });
 
-sinBottomText.addEventListener("input",()=>{
-    bottomText.textContent ="";
-    bottomText.classList.toggle("textMeme") = sinBottomText.value;     
+sinBottomText.addEventListener("input",()=>{    
+    bottomText.classList.toggle("ocultar");     
 });
 //Para Cambiar color del fondo del texto:
 const fondoLetra = document.getElementById("fondoLetra");
@@ -175,8 +185,32 @@ let textFont = document.getElementById("textFontSelect");
 textFont.addEventListener("input", () => {
     topText.style.fontFamily = textFont.value;
     bottomText.style.fontFamily = textFont.value;
-}
-);
+});
+//Tamaño de Letra:
+let inputFontSize = document.getElementById("inputFontSize");
+
+inputFontSize.addEventListener("input", () => {
+    topText.style.fontSize = `${inputFontSize.value}px`;
+    bottomText.style.fontSize =`${inputFontSize.value}px`;
+});
+//Alineado:
+let alignLeft = document.getElementById("alignLeft");
+let alignRight = document.getElementById("alignRight");
+let alignCenter= document.getElementById("alignCenter");
+
+alignLeft.addEventListener("click",()=>{
+    topText.style.textAlign=`${alignLeft.value}left`;
+    bottomText.style.textAlign=`${alignLeft.value}left`;
+});
+alignRight.addEventListener("click",()=>{
+    topText.style.textAlign=`${alignRight.value}right`;
+    bottomText.style.textAlign=`${alignRight.value}right`;
+});
+alignCenter.addEventListener("click",()=>{
+    topText.style.textAlign=`${alignCenter.value}center`;
+    bottomText.style.textAlign=`${alignCenter.value}center`;
+});
+
 
 //Modo Oscuro:
 const header = document.getElementById("header");
