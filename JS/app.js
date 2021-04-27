@@ -1,3 +1,5 @@
+'use strict';
+
 const panel = document.querySelector("#panel");
 const panelImg = document.querySelector("#panelImg");
 const panelText = document.querySelector("#panelText");
@@ -47,16 +49,12 @@ fondo.addEventListener("input", () => {
     divMeme.style.backgroundColor = fondo.value;
 });
 
-//Efectos de imagen:
+//Efectos de imagen: NO FUNCIONA
 let selectBlendMode = document.getElementById("selectBlendMode");
 
-//NO FUNCIONA
-selectBlendMode.addEventListener("change", () => {
-    
-    img.style.backgroundBlendMode = selectBlendMode.value;
-    
-    }
-);
+selectBlendMode.addEventListener("input", () => {
+    divMeme.style.backgroundBlendMode = selectBlendMode.value
+});
 
 //Filtros:
 let brightness = document.getElementById("brightness");
@@ -75,14 +73,12 @@ const actualizarFiltros = ()=>{
     contrast(${contrast.value}%)
     blur(${blur.value}px) 
     grayscale(${grayscale.value}%) 
-    sepia(${sepia.value}%) 
+    sepia(${sepia.value}%)
+    hue-rotate(${hue.value}deg) 
+    saturate(${saturation.value}%) 
+    invert(${negative.value})
     `;
 }
-//DEBRIA AGREGRAR A LA FUNCION ESTO CUANDO LOGRE FUNCIONAR CADA UNO:
-//hue(${hue.value}deg) 
-//saturation(${saturation.value}%) 
-//Negative(${negative.value})
-
 /*ESTOS SON LOS EVENTOS INDIVIDUALES SIN FUNCION:
 brightness.addEventListener("change", () => {
     img.style.filter = `brightness(${brightness.value}) opacity(${opacity.value}) contrast(${contrast.value}%) blur(${blur.value}px) grayscale(${grayscale.value}%) sepia(${sepia.value}%)   `;
@@ -101,17 +97,6 @@ grayscale.addEventListener("change", () => {
 });
 sepia.addEventListener("change", () => {
     img.style.filter = `brightness(${brightness.value}) opacity(${opacity.value}) contrast(${contrast.value}%) blur(${blur.value}px) grayscale(${grayscale.value}%) sepia(${sepia.value}%)    `;
-});
-
-/*NO FUNCIONA HUE, SATURATION Y NEGATIVE
-negative.addEventListener("change", () => {
-    img.style.filter = `brightness(${brightness.value}) opacity(${opacity.value}) contrast(${contrast.value}%) blur(${blur.value}px) grayscale(${grayscale.value}%) sepia(${sepia.value}%)    negative(${negative.value})`;
-});
-saturation.addEventListener("change", () => {
-    img.style.filter = `brightness(${brightness.value}) opacity(${opacity.value}) contrast(${contrast.value}%) blur(${blur.value}px) grayscale(${grayscale.value}%) sepia(${sepia.value}%)    saturation(${saturation.value}%)`;
-});
-hue.addEventListener("change", () => {
-    img.style.filter = `brightness(${brightness.value}) opacity(${opacity.value}) contrast(${contrast.value}%) blur(${blur.value}px) grayscale(${grayscale.value}%) sepia(${sepia.value}%)    hue(${hue.value}deg)`;
 });*/
 
 brightness.addEventListener("change", actualizarFiltros);
@@ -120,51 +105,47 @@ contrast.addEventListener("change", actualizarFiltros);
 blur.addEventListener("change", actualizarFiltros);
 grayscale.addEventListener("change", actualizarFiltros);
 sepia.addEventListener("change", actualizarFiltros);
-//hue.addEventListener("change", actualizarFiltros);
-//saturated.addEventListener("change", actualizarFiltros);
-//negative.addEventListener ("change", actualizarFiltros);
+hue.addEventListener("change", actualizarFiltros);
+saturation.addEventListener("change", actualizarFiltros);
+negative.addEventListener ("change", actualizarFiltros);
 
 //Resetear filtros:
-/*para resetear los filtros evento click en el boton de resetear y vuelvan a su valor original los range y reutilicen la funcion actualizar filtros para que actualice con esos valores... seria se "borran"
-brightness.value = "1"; opacity.value = "1"; contrast.value = "1000"; blur_.value = "0"; grayscale.value = "0"; sepia.value = "0"; hue.value = "0"; saturation.value = "100"; negative.value = "0"; actualizarFiltros();
-Eso dentro del evento
-*/
 
 let resetFiltros = document.getElementById("resetFiltros");
 
 resetFiltros.addEventListener("click",()=>{
-    img.style.filter = brightness.value = "1"; opacity.value = "1"; contrast.value = "100"; blur.value = "0"; grayscale.value = "0"; sepia.value = "0"; actualizarFiltros();
+    img.style.filter = brightness.value = "1"; opacity.value = "1"; contrast.value = "100"; blur.value = "0"; grayscale.value = "0"; sepia.value = "0"; hue.value = "0"; saturation.value = "100"; negative.value = "0"; actualizarFiltros();
 });
-
 
 
 //-----------PANEL TEXTO-----------
 
+//Ingresar Texto superior:
 let inputTopText = document.getElementById("inputTopText");
-topText.textContent = "TOP TEXT";
-inputTopText.textContent = "TOP TEXT";
 
 inputTopText.addEventListener("input", () => {
     topText.textContent = inputTopText.value;
 });
-//Para quitar texto superior:
+
+//Quitar texto superior:
 let sinTopText = document.getElementById("sinTopText");
 sinTopText.addEventListener("input",()=>{             
         topText.classList.toggle("ocultar");  
 }); 
-//ANALIZAR TEMA INPUT que no ingrese cuando indico sin texto superior.
 
+//Ingresar Texto inferior:
 const inputBottomText = document.getElementById("inputBottomText");
-bottomText.textContent = "BOTTOM TEXT";
-let sinBottomText = document.getElementById("sinBottomText");
 
 inputBottomText.addEventListener("input",()=>{
     bottomText.textContent = inputBottomText.value;
 });
 
+//Quitar Texto Inferior:
+let sinBottomText = document.getElementById("sinBottomText");
 sinBottomText.addEventListener("input",()=>{    
     bottomText.classList.toggle("ocultar");     
 });
+
 //Para Cambiar color del fondo del texto:
 const fondoLetra = document.getElementById("fondoLetra");
 
@@ -172,6 +153,7 @@ fondoLetra.addEventListener("input", () => {
    topText.style.backgroundColor = fondoLetra.value;
    bottomText.style.backgroundColor = fondoLetra.value;
 });
+
 //Para cambiar color de letra en el texto:
 const colorLetra = document.getElementById("colorLetra");
 
@@ -179,6 +161,7 @@ colorLetra.addEventListener("input", () => {
    topText.style.color = colorLetra.value;
    bottomText.style.color = colorLetra.value;
 });
+
 //Para cambiar tipografía:
 let textFont = document.getElementById("textFontSelect");
 
@@ -186,6 +169,7 @@ textFont.addEventListener("input", () => {
     topText.style.fontFamily = textFont.value;
     bottomText.style.fontFamily = textFont.value;
 });
+
 //Tamaño de Letra:
 let inputFontSize = document.getElementById("inputFontSize");
 
@@ -193,6 +177,7 @@ inputFontSize.addEventListener("input", () => {
     topText.style.fontSize = `${inputFontSize.value}px`;
     bottomText.style.fontSize =`${inputFontSize.value}px`;
 });
+
 //Alineado:
 let alignLeft = document.getElementById("alignLeft");
 let alignRight = document.getElementById("alignRight");
@@ -211,6 +196,69 @@ alignCenter.addEventListener("click",()=>{
     bottomText.style.textAlign=`${alignCenter.value}center`;
 });
 
+//Fondo Transparente: FUNCIONA MASO
+let fondoTransparente = document.getElementById ("fondoTransparente")
+//Ver tema texto, me quedan los 2 arriba:
+
+fondoTransparente.addEventListener("input", () =>{
+    if(fondoTransparente.checked){
+        topText.style.backgroundColor = `transparent`;
+        bottomText.style.backgroundColor = `transparent`;
+        topText.style.position = `absolute`;
+        bottomText.style.position = `absolute`;
+        fondoLetra.disabled = true;
+    } else{
+        topText.style.backgroundColor = `${fondoLetra.value}`;
+        bottomText.style.backgroundColor = `${fondoLetra.value}`;
+        topText.style.position = `static`;
+        bottomText.style.position = `static`;
+        fondoLetra.disabled = false;
+    }
+});
+
+//Contorno letra:
+let clearOutline = document.getElementById ("clearOutline");
+
+clearOutline.addEventListener ("click", ()=>{
+    topText.classList.add ("clearOutline");
+    bottomText.classList.add ("clearOutline");
+});
+
+let darkOutline = document.getElementById ("darkOutline");
+
+darkOutline.addEventListener ("click", ()=>{
+    topText.classList.add("darkOutline");
+    bottomText.classList.add ("darkOutline");
+    topText.classList.remove ("clearOutline");
+    bottomText.classList.remove ("clearOutline");
+});
+
+let noOutline = document.getElementById ("noOutline");
+
+noOutline.addEventListener ("click", ()=>{
+    topText.classList.remove("darkOutline");
+    bottomText.classList.remove ("darkOutline");
+    topText.classList.remove ("clearOutline");
+    bottomText.classList.remove ("clearOutline");
+});
+
+//Espaciado:
+
+let letterMargin = document.getElementById ("letterMargin");
+
+letterMargin.addEventListener ("input", ()=>{
+    topText.style.padding= `${letterMargin.value}px`;
+    bottomText.style.padding=`${letterMargin.value}px`;
+});
+
+//Interlineado:
+
+let lineSpacing = document.getElementById ("lineSpacing");
+
+lineSpacing.addEventListener("change", () => {
+    topText.style.lineHeight = lineSpacing.value;
+    bottomText.style.lineHeight = lineSpacing.value;    
+});
 
 //Modo Oscuro:
 const header = document.getElementById("header");

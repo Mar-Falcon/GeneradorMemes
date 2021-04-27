@@ -32,10 +32,9 @@
     <!-------------Inicio de main------------->
     <main id="main" class="containerMeme">
         <div id="divMeme" class="memeBox">
-            <p id="topText" class="textMeme"></p>
+            <p id="topText" class="textMeme">TOP TEXT</p>
             <img src="" alt="" id="img" class="memeImg">
-            <p id="bottomText" class="textMeme">     
-            </p>
+            <p id="bottomText" class="textMeme">BOTTOM TEXT</p>
         </div>
         <button class="buttonDownload"><i class="fas fa-download buttonIconText" aria-hidden="true"></i>
                 Descargar meme
@@ -47,7 +46,7 @@
         <button class="panelClose" id="close"><i class="fas fa-times"></i>
         </button>
         <!-------------Inicio Section Imagen------------->
-        <section id="panelImg">
+        <section id="panelImg" class="">
             <h2>IMAGEN</h2>
             <div>         
                 <label for=""><h3>URL</h3></label>
@@ -113,12 +112,12 @@
         </section>
         <!------------Fin Section Imagen-------------->
         <!------------Inicio Section Texto------------->
-        <section id="panelText">
+        <section id="panelText" class="ocultar">
             <h2>TEXTO</h2>
             <!------------------TEXTO------------------------>
             <div>
                 <h3>SUPERIOR</h3>
-                <textarea aria-label="Texto superior" class="panelImput" id="inputTopText"></textarea>
+                <textarea aria-label="Texto superior" class="panelImput" id="inputTopText">TOP TEXT</textarea>
                 <div>
                     <input type="checkbox" name="" id="sinTopText">
                     <label for="">Sin texto superior</label>
@@ -168,7 +167,7 @@
                     </div>
                 </div>
                 <div>
-                    <input type="checkbox" name="" id="">
+                    <input type="checkbox" name="" id="fondoTransparente">
                     <label for="">Fondo transparente</label>
                 </div>
             </div>
@@ -176,26 +175,26 @@
             <div>
                 <h3>CONTORNO</h3>
                 <div class="row">
-                    <button class="panelImput marginRight" >NINGUNO</button>
-                    <button class="panelImput marginRight">CLARO</button>
-                    <button class="panelImput">OSCURO</button>
+                    <button id="noOutline" class="panelImput marginRight" >NINGUNO</button>
+                    <button id="clearOutline" class="panelImput marginRight">CLARO</button>
+                    <button id="darkOutline" class="panelImput">OSCURO</button>
                 </div>                
             </div>
             <!------------ESPACIADO-------------->
             <div>
                 <h3>ESPACIADO</h3>
-                <input type="number" class="panelImput">
+                <input id="letterMargin" type="number" class="panelImput" min="10" max="50" value="20">
             </div>
             <!-----------INTERLINEADO---------------------->
             <div>
                 <h3>INTERLINEADO</h3>
-                <select name="" id="" class="panelImput">
-                    <option value="">0.8</option>
-                    <option value="">1</option>
-                    <option value="">1.2</option>
-                    <option value="">1.5</option>
-                    <option value="">2</option>
-                    <option value="">2.5</option>
+                <select name="" id="lineSpacing" class="panelImput">
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2" selected>1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
                 </select>
             </div>
         </section>

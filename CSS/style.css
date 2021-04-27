@@ -214,6 +214,18 @@ input[type='color']::-webkit-color-swatch {
 .centrado{
     padding: 5px;
 }
+.darkOutline{
+    text-shadow: -1px 0 black, 
+    0 1px black,
+    1px 0 black, 
+    0 -1px black;
+}
+.clearOutline{
+    text-shadow: -1px 0 white, 
+    0 1px white,
+    1px 0 white, 
+    0 -1px white;
+}
   
 /*--- Ajustes responsivos---*/
 @media screen and (min-width: 768px){
@@ -221,6 +233,7 @@ input[type='color']::-webkit-color-swatch {
         right: 0;
         width: 20%;
         overflow: hidden;
+        display: block;
     }   
     .panelClose{
         display: none;
