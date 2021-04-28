@@ -59,25 +59,30 @@ header{
     max-width: 610px;
     height: 450px;
     background-color: black;
-    position: relative;
+    /*position: relative;*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+.divImg{
+    /*width: 100%;
+    /*max-width: 610px;*/
+    height: 450px;
+    position: relative;
+    /*background-color: black;
+    /*position: relative;
+    /*display: flex;
+    flex-direction: column;
+    justify-content: space-between;*/
 }
 .textMeme{
     background-color: whitesmoke;
     text-align: center;
     font-size: 40px;
     font-weight: 800;
-    padding: 15px;    
-
+    padding: 15px;  
+    position: relative; 
 }
-
-
-/*
-.memeImg{
-    background-image: url();
-}*/
 .buttonDownload{
     height: 36px;
     display: flex;
@@ -180,6 +185,18 @@ input[type=range]::-webkit-slider-thumb {
     background: rgb(255, 255, 255);
     cursor: pointer;
 }
+.darkOutline{
+    text-shadow: -1px 0 black, 
+    0 1px black,
+    1px 0 black, 
+    0 -1px black;
+}
+.clearOutline{
+    text-shadow: -1px 0 white, 
+    0 1px white,
+    1px 0 white, 
+    0 -1px white;
+}
 .buttonDefault{
     margin-top: 30px;
     background-color: rgb(217, 217, 217);
@@ -211,22 +228,7 @@ input[type='color']::-webkit-color-swatch {
     cursor: pointer;
     margin-right: 10px;
 }*/
-.centrado{
-    padding: 5px;
-}
-.darkOutline{
-    text-shadow: -1px 0 black, 
-    0 1px black,
-    1px 0 black, 
-    0 -1px black;
-}
-.clearOutline{
-    text-shadow: -1px 0 white, 
-    0 1px white,
-    1px 0 white, 
-    0 -1px white;
-}
-  
+
 /*--- Ajustes responsivos---*/
 @media screen and (min-width: 768px){
     .panel{
@@ -238,5 +240,4 @@ input[type='color']::-webkit-color-swatch {
     .panelClose{
         display: none;
     }   
-    /*Ver que aparezca panel desde el pirncipio con ocultar una seccion y panel block total*/  
 }

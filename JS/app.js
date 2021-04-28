@@ -32,28 +32,29 @@ buttonImg.addEventListener("click",()=>{
 //----------PANEL IMAGEN------------
 
 const inputImg = document.querySelector("#url");
-const img = document.querySelector("#img");
+let divImg = document.getElementById ("divImg");
+let divMeme = document.getElementById("divMeme");
 
 //cargar imagen:
 inputImg.addEventListener("input", () => {
-    img.src = inputImg.value;
+    const url = inputImg.value;
+    divImg.style.backgroundImage = `url(${url})`;
 });
 
 let topText = document.getElementById("topText");
 let bottomText = document.getElementById("bottomText");
-let divMeme = document.getElementById("divMeme");
 const fondo = document.getElementById("color");
 
 //color de fondo de imagen:
 fondo.addEventListener("input", () => {
-    divMeme.style.backgroundColor = fondo.value;
+    divImg.style.backgroundColor = fondo.value;
 });
 
-//Efectos de imagen: NO FUNCIONA
+//Efectos de imagen: 
 let selectBlendMode = document.getElementById("selectBlendMode");
 
 selectBlendMode.addEventListener("input", () => {
-    divMeme.style.backgroundBlendMode = selectBlendMode.value
+    divImg.style.backgroundBlendMode = selectBlendMode.value
 });
 
 //Filtros:
@@ -68,7 +69,7 @@ let saturation = document.getElementById("saturation");
 let negative = document.getElementById("negative");
 
 const actualizarFiltros = ()=>{ 
-    img.style.filter = `brightness(${brightness.value}) 
+    divImg.style.filter = `brightness(${brightness.value}) 
     opacity(${opacity.value}) 
     contrast(${contrast.value}%)
     blur(${blur.value}px) 
@@ -114,7 +115,7 @@ negative.addEventListener ("change", actualizarFiltros);
 let resetFiltros = document.getElementById("resetFiltros");
 
 resetFiltros.addEventListener("click",()=>{
-    img.style.filter = brightness.value = "1"; opacity.value = "1"; contrast.value = "100"; blur.value = "0"; grayscale.value = "0"; sepia.value = "0"; hue.value = "0"; saturation.value = "100"; negative.value = "0"; actualizarFiltros();
+    divImg.style.filter = brightness.value = "1"; opacity.value = "1"; contrast.value = "100"; blur.value = "0"; grayscale.value = "0"; sepia.value = "0"; hue.value = "0"; saturation.value = "100"; negative.value = "0"; actualizarFiltros();
 });
 
 
@@ -146,7 +147,7 @@ sinBottomText.addEventListener("input",()=>{
     bottomText.classList.toggle("ocultar");     
 });
 
-//Para Cambiar color del fondo del texto:
+//Cambiar color del fondo del texto:
 const fondoLetra = document.getElementById("fondoLetra");
 
 fondoLetra.addEventListener("input", () => {
@@ -154,7 +155,7 @@ fondoLetra.addEventListener("input", () => {
    bottomText.style.backgroundColor = fondoLetra.value;
 });
 
-//Para cambiar color de letra en el texto:
+//Cambiar color de letra del texto:
 const colorLetra = document.getElementById("colorLetra");
 
 colorLetra.addEventListener("input", () => {
@@ -162,7 +163,7 @@ colorLetra.addEventListener("input", () => {
    bottomText.style.color = colorLetra.value;
 });
 
-//Para cambiar tipografía:
+//Cambiar tipografía:
 let textFont = document.getElementById("textFontSelect");
 
 textFont.addEventListener("input", () => {
@@ -196,24 +197,23 @@ alignCenter.addEventListener("click",()=>{
     bottomText.style.textAlign=`${alignCenter.value}center`;
 });
 
-//Fondo Transparente: FUNCIONA MASO
+//Fondo Transparente: FUNCIONA MASO, se borra el texto de arriba y sube el de abajo
 let fondoTransparente = document.getElementById ("fondoTransparente")
-//Ver tema texto, me quedan los 2 arriba:
 
 fondoTransparente.addEventListener("input", () =>{
-    if(fondoTransparente.checked){
+    if(fondoTransparente.checked){  
         topText.style.backgroundColor = `transparent`;
-        bottomText.style.backgroundColor = `transparent`;
+        bottomText.style.backgroundColor = `transparent`;    
         topText.style.position = `absolute`;
         bottomText.style.position = `absolute`;
-        fondoLetra.disabled = true;
-    } else{
+        fondoLetra.disabled = true;  
+    }else{
         topText.style.backgroundColor = `${fondoLetra.value}`;
         bottomText.style.backgroundColor = `${fondoLetra.value}`;
         topText.style.position = `static`;
         bottomText.style.position = `static`;
-        fondoLetra.disabled = false;
-    }
+        fondoLetra.disabled = false; 
+    }   
 });
 
 //Contorno letra:
