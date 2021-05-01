@@ -251,5 +251,9 @@ input[type='color']::-webkit-color-swatch {
     }
     .panelClose{
         display: none;
-    }  
+    } 
+    .memeBox {
+        width: 60vh;
+        height: 60vh;
+    }
 }
