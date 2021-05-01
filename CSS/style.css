@@ -11,6 +11,7 @@ body{
 header{
     background-color:  rgb(217, 217, 217);
     color: rgb(49, 47, 47);
+    padding: 5px;
 }
 .title{
     text-align: center;
@@ -51,37 +52,39 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color:rgb(230, 226, 224);
-    padding: 30px;
+    padding: 20px;   
 }
 .memeBox {
-    width: 100%;
-    max-width: 610px;
-    height: 450px;
+    width: 40vh;
+    height: 40vh;
     background-color: black;
-    /*position: relative;*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
 .divImg{
-    /*width: 100%;
-    /*max-width: 610px;*/
-    height: 450px;
-    position: relative;
-    /*background-color: black;
-    /*position: relative;
-    /*display: flex;
-    flex-direction: column;
-    justify-content: space-between;*/
+    height: 100%;  
+    width: 100%; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;   
 }
 .textMeme{
+    width: 100%;
     background-color: whitesmoke;
     text-align: center;
-    font-size: 40px;
+    font-size: 20px;
     font-weight: 800;
-    padding: 15px;  
-    position: relative; 
+    padding: 10px;  
+    position: static; 
+}
+#topText{
+    z-index: 1;
+}
+#bottomText{
+    bottom: 0;
 }
 .buttonDownload{
     height: 36px;
@@ -105,7 +108,7 @@ header{
     outline: none;
 }
 .panel{
-    z-index: 1;
+    z-index: 3;
     position: fixed;
     top: 0;
     width: 100%;
@@ -140,7 +143,7 @@ h3{
     background-color: rgb(217, 217, 217);
     border-radius: 10px;
     border: transparent;
-    padding: 10px;  
+    padding: 7px;  
     margin-bottom: 10px;  
     border: none; 
 }
@@ -201,6 +204,23 @@ input[type=range]::-webkit-slider-thumb {
     margin-top: 30px;
     background-color: rgb(217, 217, 217);
 }
+input[type='color']{
+    border: transparent;
+    cursor: pointer;
+    background-color: transparent;
+    text-align: center;
+    padding-bottom: 3px;
+    width: 20px;
+    height: 25px;    
+}
+input[type='color']::-webkit-color-swatch {
+    border:transparent;
+    border-radius: 25px;
+}
+.centerSpan{
+    padding-top: 3px;   
+    color: black;
+}
 /*---Estilos para modo oscuro---*/
 .dark{
     background-color: black ;
@@ -216,28 +236,20 @@ input[type=range]::-webkit-slider-thumb {
 .white{
     color: white;
 }
-/*
-input[type='color']::-webkit-color-swatch {
-    width: 18px;
-    height: 18px;
-    min-width: 18px;
-    border-radius: 25px;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    cursor: pointer;
-    margin-right: 10px;
-}*/
-
 /*--- Ajustes responsivos---*/
+
 @media screen and (min-width: 768px){
     .panel{
         right: 0;
-        width: 20%;
+        max-width: 250px;
         overflow: hidden;
+    }     
+}
+@media screen and (min-width: 1200px){
+    .panel{
         display: block;
-    }   
+    }
     .panelClose{
         display: none;
-    }   
+    }  
 }

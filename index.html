@@ -7,6 +7,7 @@
     <title>Generador de Memes</title>
     <script src="https://kit.fontawesome.com/5a448a2b79.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="icon" href="img/icono.png" type="image/png"/>
 </head>
 <body>
     <!----------Inicio de Header------------>
@@ -14,7 +15,7 @@
         <h1 class="title">
             Generador de Memes
         </h1>
-        <div class="buttonContainer">
+        <div id="" class="buttonContainer">
             <button class="button"id="buttonImg">
                 <i class="fas fa-file-image buttonIconText" aria-hidden="true"></i>
                 Imagen
@@ -24,7 +25,7 @@
                 Texto
             </button>
             <button id="mode" class="button"><i class="far fa-lightbulb buttonIconText" aria-hidden="true"></i>
-                Modo claro
+                Modo oscuro
             </button>
         </div>
     </header>
@@ -33,12 +34,10 @@
     <main id="main" class="containerMeme">
         <div id="divMeme" class="memeBox">
             <p id="topText" class="textMeme">TOP TEXT</p>
-            <div id="divImg" class="divImg">
-            <!--<img src="" alt="" id="img" class="memeImg">-->
-            </div>
+            <div id="divImg" class="divImg"></div>
             <p id="bottomText" class="textMeme">BOTTOM TEXT</p>
         </div>
-        <button class="buttonDownload"><i class="fas fa-download buttonIconText" aria-hidden="true"></i>
+        <button id="downloadMeme" class="buttonDownload"><i class="fas fa-download buttonIconText" aria-hidden="true"></i>
                 Descargar meme
         </button>
     </main>
@@ -56,11 +55,11 @@
             </div>
             <div class="column">         
                 <label for=""><h3>FONDO</h3></label>
-                <div class="row"> 
-                                     
-                    <input type="color" id="color" value="#000000"  class="panelImput marginRight" aria-label="Color de fondo de imagen">                    
-                    <!--Puede agregar un div para embolver el input y agregar el span<span id="blend-mode-color" class="" aria-hidden="true">#FFFFFF</span> -->
-                    
+                <div class="row">
+                    <div class="panelImput marginRight row">                                      
+                    <input type="color" id="color" value="#FFFFFF"  class="" aria-label="Color de fondo de imagen">                    
+                    <span id="colorCodeImg" class="centerSpan" aria-hidden="true">#FFFFFF</span> 
+                    </div>
                     <select name="" id="selectBlendMode" class="panelImput">
                         <option value="unset">Ninguno</option>
                         <option value="lighten">Aclarar</option>
@@ -147,7 +146,7 @@
                 </select>
                 <div class="row">
                     <!--------Tamaño----------->
-                    <input type="number" class="panelImput marginRight" id="inputFontSize" min="12" value="40">
+                    <input type="number" class="panelImput marginRight" id="inputFontSize" min="12" value="20">
                     <div class="row">
                         <!-----------Alineación-------------> 
                         <button class="panelImput marginRight" id="alignLeft"><i class="fas fa-align-left" aria-hidden="true"></i></button>
@@ -161,11 +160,17 @@
                 <div class="row">
                     <div class="marginRight">
                         <h3>COLOR</h3>
-                        <input type="color" name="" id="colorLetra" value="#000000" class="panelImput">
+                        <div class="panelImput row">
+                        <input type="color" name="" id="colorLetra" value="#000000" >
+                        <span id="colorCodeText" class="centerSpan" aria-hidden="true">#000000</span>
+                        </div>
                     </div>
                     <div>
                         <h3>FONDO</h3>
-                        <input type="color" name="" id="fondoLetra"class="panelImput">
+                        <div class="panelImput row">
+                        <input type="color" name="" id="fondoLetra" class="" value="#FFFFFF">
+                        <span id="colorCodeBackText" class="centerSpan" aria-hidden="true">#FFFFFF</span>
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -202,8 +207,10 @@
         </section>
         <!------------Fin Section Imagen------------->
     </aside>
-    <!-------------Fin de aside---------------->         
-
+    <!-------------Fin de aside---------------->     
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw==" crossorigin="anonymous"></script>
     <script src="./JS/app.js"></script>
 </body>
 </html>
